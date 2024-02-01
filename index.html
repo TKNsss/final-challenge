@@ -4,30 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Final challenge</title>
-
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header-top container">
-    <button class="header-top__button">
-      <span class="drop-bar"></span>
-    </button>
-    
-    <a target="_self" class="header-top__home-link">
-      <img src="image/logo.svg" alt="create responsive layout" class="logo">
-    </a>
+  <header class="header-top"> 
+    <div class="container flex-box">
+      <button class="header-top__button" aria-label="open navigation">
+        <span class="hamburger"></span>
+      </button>
+      
+      <a target="_self" herf="#" class="header-top__home-link">
+        <img src="image/logo.svg" alt="create responsive layout" class="logo">
+      </a>
 
-    <nav class="nav">
-      <ul class="nav__link nav__link--primary">
-        <li class="nav__item">Home</li>
-        <li class="nav__item">About</li>
-        <li class="nav__item">Contact</li>
-      </ul>
+      <nav class="nav">
+        <ul class="nav__list nav__list--primary">
+          <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+        </ul>
 
-      <ul class="nav__link nav__link--secondary">
-        <li class="nav__item">Sign in</li>
-        <li class="nav__item nav__link--button">Sign up</li>
-      </ul>
-    </nav>
+        <ul class="nav__list nav__list--secondary">
+          <li class="nav__item"><a class="nav__link" href="#">Sign in</a></li>
+          <li class="nav__item"><a href="#" class="nav__link nav__link--button">Sign up</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <header class="container flexbox">
@@ -125,5 +127,7 @@
       </div>
     </div>
   </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
