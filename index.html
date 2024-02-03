@@ -1,133 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final challenge</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="header-top"> 
-    <div class="container flex-box">
-      <button class="header-top__button" aria-label="open navigation">
-        <span class="hamburger"></span>
-      </button>
-      
-      <a target="_self" herf="#" class="header-top__home-link">
-        <img src="image/logo.svg" alt="create responsive layout" class="logo">
-      </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final challenge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header-top">
+      <div class="container flex-box">
+        <div class="menuToggle">
+          <input class="check" type="checkbox" />
 
-      <nav class="nav">
-        <ul class="nav__list nav__list--primary">
-          <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
-        </ul>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-        <ul class="nav__list nav__list--secondary">
-          <li class="nav__item"><a class="nav__link" href="#">Sign in</a></li>
-          <li class="nav__item"><a href="#" class="nav__link nav__link--button">Sign up</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        <a target="_self" href="index.html" class="header-top__home-link">
+          <img
+            src="image/logo.svg"
+            alt="create responsive layout"
+            class="logo"
+          />
+        </a>
 
-  <header class="container flexbox">
-    <h1 class="header__title"><span class="color-change">Responsive layouts</span> don't have to be a struggle</h1>
+        <nav class="nav">
+          <ul class="nav__list nav__list--primary">
+            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+          </ul>
 
-    <div class="header__text-block">
-      <p class="header__text">Lorem ipsum dolor sit amet consectetur adipisicing elit, set do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <a href="#" class="btn">I want to learn</a>
-    </div>
-  </header>
-
-  <section class="small-section">
-    <div class="container flex-box">
-      <div class="flex-item">
-        <h2 class="section-title">Mobile</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-      </div>
-
-      <div class="flex-item">
-        <h2 class="section-title">Efficient</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-      </div>
-
-      <div class="flex-item">
-        <h2 class="section-title">Done right</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-      </div>
-    </div>
-  </section>
-
-  <main class="main container flex-box">
-    <div class="main__content">
-      <h2 class="section-title">It's doesn't have to be so hard</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-      <img src="image/the-image.jpg" alt="the image" class="main__image">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-    </div>
-
-    <aside class="sidebar">
-      <div class="sidebar__block">
-        <h2 class="section-title section-title--white">Break it down</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-      </div>
-
-      <div class="sidebar__block">
-        <h2 class="section-title section-title--white">Break it down</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-      </div>
-
-      <div class="sidebar__block">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p> 
-      </div>
-    </aside>
-  </main>
-
-  <footer class="footer container">
-    <h1 class="footer__title">just scratching the surface</h1>
-
-    <div class="flex-box">
-      <div class="flex-item">
-        <h4 class="section-title">About our company</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-      </div>
-      
-      <div class="flex-item">
-        <h4 class="section-title">Getting around</h4>
-        
-        <nav class="nav-footer">
-          <a href="#home" class="nav-footer__link">Home</a>
-          <a href="#about" class="nav-footer__link">About</a>
-          <a href="#contact" class="nav-footer__link">Contact</a>
+          <ul class="nav__list nav__list--secondary">
+            <li class="nav__item"><a href="#" class="nav__link">Sign in</a></li>
+            <li class="nav__item">
+              <a href="#" class="nav__link nav__link--button">Sign up</a>
+            </li>
+          </ul>
         </nav>
       </div>
+    </header>
 
-      <div class="flex-item">
-        <h4 class="section-title">Other things</h4>
-        
-        <nav class="nav-footer">
-          <a href="#" class="nav-footer__link">Lorem ipsum</a>
-          <a href="#" class="nav-footer__link">dolor</a>
-          <a href="#" class="nav-footer__link">sit amet</a>
-          <a href="#" class="nav-footer__link">consectetur</a>
-        </nav>
-      </div>
-      
-      <div class="flex-item">
-        <h4 class="section-title">And more</h4>
-        
-        <nav class="nav-footer">
-          <a href="#" class="nav-footer__link">Lorem ipsum</a>
-          <a href="#" class="nav-footer__link">dolor</a>
-          <a href="#" class="nav-footer__link">sit amet</a>
-          <a href="#" class="nav-footer__link">consectetur</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
+    <section class="container flexbox">
+      <h1 class="header__title">
+        <span class="color-change">Responsive layouts</span> don't have to be a
+        struggle
+      </h1>
 
-  <script src="index.js"></script>
-</body>
+      <div class="header__text-block">
+        <p class="header__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit, set do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <a href="#" class="btn">I want to learn</a>
+      </div>
+    </section>
+
+    <section class="small-section">
+      <div class="container flex-box">
+        <div class="flex-item">
+          <h2 class="section-title">Mobile</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </p>
+        </div>
+
+        <div class="flex-item">
+          <h2 class="section-title">Efficient</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </p>
+        </div>
+
+        <div class="flex-item">
+          <h2 class="section-title">Done right</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <main class="main container flex-box">
+      <div class="main__content">
+        <h2 class="section-title">It's doesn't have to be so hard</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam.
+        </p>
+        <img src="image/the-image.jpg" alt="the image" class="main__image" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam.
+        </p>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__block">
+          <h2 class="section-title section-title--white">Break it down</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </p>
+        </div>
+
+        <div class="sidebar__block">
+          <h2 class="section-title section-title--white">Break it down</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </p>
+        </div>
+
+        <div class="sidebar__block">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer container">
+      <h1 class="footer__title">just scratching the surface</h1>
+
+      <div class="flex-box">
+        <div class="flex-item">
+          <h4 class="section-title">About our company</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </p>
+        </div>
+
+        <div class="flex-item">
+          <h4 class="section-title">Getting around</h4>
+
+          <nav class="nav-footer">
+            <a href="#home" class="nav-footer__link">Home</a>
+            <a href="#about" class="nav-footer__link">About</a>
+            <a href="#contact" class="nav-footer__link">Contact</a>
+          </nav>
+        </div>
+
+        <div class="flex-item">
+          <h4 class="section-title">Other things</h4>
+
+          <nav class="nav-footer">
+            <a href="#" class="nav-footer__link">Lorem ipsum</a>
+            <a href="#" class="nav-footer__link">dolor</a>
+            <a href="#" class="nav-footer__link">sit amet</a>
+            <a href="#" class="nav-footer__link">consectetur</a>
+          </nav>
+        </div>
+
+        <div class="flex-item">
+          <h4 class="section-title">And more</h4>
+
+          <nav class="nav-footer">
+            <a href="#" class="nav-footer__link">Lorem ipsum</a>
+            <a href="#" class="nav-footer__link">dolor</a>
+            <a href="#" class="nav-footer__link">sit amet</a>
+            <a href="#" class="nav-footer__link">consectetur</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
 </html>

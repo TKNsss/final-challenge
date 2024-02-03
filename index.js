@@ -1,6 +1,6 @@
-const button = document.querySelector('.header-top__button');
+const checked = document.querySelector('.check');
 const nav = document.querySelector('.nav');
 
-button.addEventListener('click', () => {
+checked.addEventListener('click', () => {
   nav.classList.toggle(['nav--visible']);
-});
+})

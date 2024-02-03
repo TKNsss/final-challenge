@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap");
 
 :root {
   --header-top: #2e323f;
@@ -8,7 +8,9 @@
   --small-section: #f1f1f1;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -19,13 +21,14 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin-top: 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 img {
@@ -51,60 +54,91 @@ img {
   padding: 1em 0;
 }
 
-.header-top__button {
-  background: var(--header-button);
-  width: 3em;
-  height: 3em;
-  border-radius: 50%;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  color: #fff;
-  transition: opacity 250ms ease;
-  
-  position: absolute;
-  left: 0;
-}
-
-.header-top__button:hover {
-  opacity: .75;
-}
-
-.hamburger {
-  width: 50%;
+.menuToggle {
+  display: block;
   position: relative;
 }
 
-.hamburger,
-.hamburger::before,
-.hamburger::after {
+.menuToggle input {
   display: block;
-  margin: 0 auto;
-  height: 3px;
-  background: white;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  left: 0;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+}
+
+.menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+
+  position: relative;
+  left: 7px;
+  top: 5px;
+
+  background: #fff;
   border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  width: 100%;
+.menuToggle span:first-child {
+  /*  the transformation will be applied around the top-left corner of the element.  */
+  transform-origin: 0% 0%;
 }
 
-.hamburger::before {
-  transform: translateY(-6px); 
+.menuToggle span:last-child {
+  /* bottom-left corner */
+  transform-origin: 0% 100%;
 }
 
-.hamburger::after {
-  transform: translateY(3px);
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+.menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: var(--header-button);
+}
+
+/*
+ * But let's hide the middle one.
+ */
+.menuToggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ the last one should go the other direction
+*/
+.menuToggle input:checked ~ span:last-child {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+.header-top__home-link {
+  position: relative;
+  bottom: 1.5rem;
 }
 
 .nav {
+  width: 100%;
   visibility: hidden;
   height: 0;
-  width: 100%;
-
   position: absolute;
+  transition: height .3s ease;
 }
 
 .nav--visible {
@@ -114,38 +148,40 @@ img {
 }
 
 .nav__list {
-  margin: 0;
-  padding: 0;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav__list--primary {
   margin-bottom: 2em;
 }
 
-.nav__list--primary .nav__item:hover,
-.nav__list--secondary .nav__item:hover:not(:last-child) {
-  background: var(--header-button);
-  color: var(--header-top);
-  transition: 250ms linear;
+.nav__item {
+  margin-bottom: 1em;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-.nav__item {
-  margin-top: .75em;
+.nav__list--primary .nav__item:hover {
+  background: var(--footer-text);
+}
+
+.nav__list--secondary .nav__item:hover:not(:last-child) {
+  background: var(--footer-text);
 }
 
 .nav__link {
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  font-weight: 700;
 }
 
 .nav__link--button {
-  color: var(--header-top);
-  background: #fff;
-  padding: .25em .75em;
+  padding: 0.5em 0.75em;
   border-radius: 100px;
+  transition: all 0.3s ease;
 }
 
 .nav__link--button:hover {
