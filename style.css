@@ -55,8 +55,8 @@ img {
 }
 
 .menuToggle {
-  display: block;
-  position: relative;
+  width: 80px;
+  position: absolute;
 }
 
 .menuToggle input {
@@ -77,20 +77,18 @@ img {
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
+  background: #fff;
+  border-radius: 3px;
 
   position: relative;
   left: 7px;
   top: 5px;
 
-  background: #fff;
-  border-radius: 3px;
-
   z-index: 1;
 
   transform-origin: 4px 0px;
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.5s ease;
 }
 
 .menuToggle span:first-child {
@@ -128,23 +126,19 @@ img {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-.header-top__home-link {
-  position: relative;
-  bottom: 1.5rem;
-}
-
 .nav {
   width: 100%;
-  visibility: hidden;
   height: 0;
   position: absolute;
-  transition: height .3s ease;
+
+  transform: translate(0, -100%);
+  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 .nav--visible {
-  visibility: visible;
   height: auto;
   position: relative;
+  transform: none;
 }
 
 .nav__list {
@@ -154,6 +148,7 @@ img {
 }
 
 .nav__list--primary {
+  margin-top: 1.5em;
   margin-bottom: 2em;
 }
 
