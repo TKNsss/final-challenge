@@ -183,3 +183,34 @@ img {
   background: var(--header-button);
   color: #fff;
 }
+
+.top-section {
+  background: var(--block-section);
+  color: #fff;
+  padding: 6.25em 0;
+}
+
+.top-section__title {
+  font-size: 3.7rem;
+}
+
+.color-change {
+  color: var(--header-button);
+}
+
+.top-section__text {
+  font-size: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: var(--header-button);
+  padding: 0.25em 1.5em;
+  border-radius: 100px;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
