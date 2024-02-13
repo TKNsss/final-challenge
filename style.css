@@ -5,7 +5,7 @@
   --block-section: #3b4050;
   --footer-text: #6f737f;
   --header-button: #a59678;
-  --small-section: #f1f1f1;
+  --small-section: lightgrey;
 }
 
 *,
@@ -182,4 +182,9 @@ img {
 .nav__link--button:hover {
   background: var(--header-button);
   color: #fff;
+}
+
+.sub-section {
+  background: var(--small-section);
+  padding: 5em 0;
 }
