@@ -5,7 +5,7 @@
   --block-section: #3b4050;
   --footer-text: #6f737f;
   --header-button: #a59678;
-  --small-section: #f1f1f1;
+  --small-section: lightgrey;
 }
 
 *,
@@ -217,4 +217,9 @@ img {
   font-family: "Oswald", sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
+}
+
+.sub-section {
+  background: var(--small-section);
+  padding: 5em 0;
 }
