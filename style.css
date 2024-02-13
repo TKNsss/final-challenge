@@ -130,6 +130,7 @@ img {
   width: 100%;
   height: 0;
   position: absolute;
+  opacity: 0;
 
   transform: translate(0, -100%);
   transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -139,6 +140,7 @@ img {
   height: auto;
   position: relative;
   transform: none;
+  opacity: 1;
 }
 
 .nav__list {
@@ -182,6 +184,39 @@ img {
 .nav__link--button:hover {
   background: var(--header-button);
   color: #fff;
+}
+
+.top-section {
+  background: var(--block-section);
+  color: #fff;
+  padding: 5.75em 0;
+}
+
+.top-section__title {
+  font-size: 3.75rem;
+  line-height: 1.1;
+}
+
+.color-change {
+  color: var(--header-button);
+}
+
+.top-section__text {
+  font-size: 1.3rem;
+  margin-bottom: 1.7em;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: var(--header-button);
+  padding: 0.25em 1.5em;
+  border-radius: 100px;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .sub-section {
