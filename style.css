@@ -26,9 +26,19 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h4 {
   margin-top: 0;
   font-family: "Oswald", sans-serif;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.5;
 }
 
 img {
@@ -38,6 +48,22 @@ img {
 
 .section-title {
   color: var(--header-button);
+}
+
+.section-title--white {
+  color: #fff;
+}
+
+.section-title--big {
+  font-size: 2.25rem;
+}
+
+.section-title--none {
+  opacity: 0;
+}
+
+.vanish {
+  opacity: 0;
 }
 
 .container {
@@ -224,6 +250,30 @@ img {
   padding: 5em 0;
 }
 
+.main {
+  padding: 5em 0;
+}
+
+.main__content p {
+  font-size: 1.313rem;
+}
+
+.sidebar {
+  margin-top: 2em;
+  text-align: center;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__block {
+  background: var(--header-top);
+  padding: 1.5em;
+  margin-bottom: 1.25em;
+  max-width: 420px;
+}
+
 .footer {
   background: var(--block-section);
   color: var(--footer-text);
@@ -240,4 +290,23 @@ img {
 
 .footer__content {
   display: none;
+}
+
+@media (min-width: 480px) {
+  .sidebar {
+    align-items: center;
+  }
+}
+
+@media (min-width: 700px) {
+  .sidebar {
+    flex-direction: row;
+    align-items: normal;
+    gap: 1em;
+  }
+
+  .main__img {
+    width: 100%;
+    max-height: 350px;
+  }
 }
