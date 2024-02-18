@@ -223,3 +223,21 @@ img {
   background: var(--small-section);
   padding: 5em 0;
 }
+
+.footer {
+  background: var(--block-section);
+  color: var(--footer-text);
+  padding: 1em 0;
+}
+
+.footer__title {
+  display: none;
+}
+
+.footer__col {
+  border-bottom: 1px solid #dadada;
+}
+
+.footer__content {
+  display: none;
+}
