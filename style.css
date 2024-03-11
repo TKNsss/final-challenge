@@ -5,7 +5,7 @@
   --block-section: #3b4050;
   --footer-text: #6f737f;
   --header-button: #a59678;
-  --small-section: lightgrey;
+  --small-section: #f1f1f1;
 }
 
 *,
@@ -23,6 +23,7 @@ body {
   padding: 0;
   font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
+  min-height: 100vh;
 }
 
 h1,
@@ -30,6 +31,10 @@ h2,
 h4 {
   margin-top: 0;
   font-family: "Oswald", sans-serif;
+}
+
+h4 {
+  font-size: 1.25rem;
 }
 
 h2 {
@@ -59,10 +64,6 @@ img {
 }
 
 .section-title--none {
-  opacity: 0;
-}
-
-.vanish {
   opacity: 0;
 }
 
@@ -113,7 +114,7 @@ img {
   z-index: 1;
 
   transform-origin: 4px 0px;
-  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1),
+  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.5s ease;
 }
 
@@ -128,18 +129,17 @@ img {
 }
 
 /* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+  Transform all the slices of hamburger into a crossmark.
+*/
 .menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: var(--header-button);
+  background: var(--footer-text);
 }
 
 /*
- * But let's hide the middle one.
- */
+  hide the middle one.
+*/
 .menuToggle input:checked ~ span:nth-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
@@ -152,20 +152,35 @@ img {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
+.logo {
+  transition: opacity 0.2s ease-out;
+  height: 25px;
+  margin-top: 0.25em;
+}
+
+.logo:hover {
+  opacity: 0.75;
+}
+
 .nav {
   width: 100%;
-  height: 0;
+
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s;
+
   position: absolute;
   opacity: 0;
+}
 
-  transform: translate(0, -100%);
-  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+.nav > ul {
+  overflow: hidden;
 }
 
 .nav--visible {
-  height: auto;
+  grid-template-rows: 1fr;
+
   position: relative;
-  transform: none;
   opacity: 1;
 }
 
@@ -183,16 +198,9 @@ img {
 .nav__item {
   margin-bottom: 1em;
   font-weight: 700;
+  font-family: "Oswald", sans-serif;
   border-radius: 5px;
   transition: background 0.3s ease;
-}
-
-.nav__list--primary .nav__item:hover {
-  background: var(--footer-text);
-}
-
-.nav__list--secondary .nav__item:hover:not(:last-child) {
-  background: var(--footer-text);
 }
 
 .nav__link {
@@ -201,25 +209,20 @@ img {
   text-transform: uppercase;
 }
 
-.nav__link--button {
-  padding: 0.5em 0.75em;
-  border-radius: 100px;
-  transition: all 0.3s ease;
-}
-
-.nav__link--button:hover {
-  background: var(--header-button);
-  color: #fff;
+.nav__link:hover {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
 }
 
 .top-section {
   background: var(--block-section);
   color: #fff;
-  padding: 5.75em 0;
+  padding: 5em 0;
+  min-height: 580px;
 }
 
 .top-section__title {
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1.1;
 }
 
@@ -228,7 +231,7 @@ img {
 }
 
 .top-section__text {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   margin-bottom: 1.7em;
 }
 
@@ -237,12 +240,24 @@ img {
   text-decoration: none;
   color: white;
   background: var(--header-button);
-  padding: 0.25em 1.5em;
+  padding: 0.25em 1.25em;
   border-radius: 100px;
   font-weight: bold;
   font-family: "Oswald", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background: #fff;
+  color: var(--block-section);
+}
+
+.btn:focus {
+  background: #fff;
+  color: var(--block-section);
+  opacity: 0.75;
 }
 
 .sub-section {
@@ -251,27 +266,24 @@ img {
 }
 
 .main {
-  padding: 5em 0;
+  padding: 6em 0;
 }
 
 .main__content p {
-  font-size: 1.313rem;
+  font-size: 1.25rem;
 }
 
 .sidebar {
-  margin-top: 2em;
+  margin-top: 3em;
   text-align: center;
   color: #fff;
-
-  display: flex;
-  flex-direction: column;
 }
 
 .sidebar__block {
-  background: var(--header-top);
+  background: var(--block-section);
   padding: 1.5em;
   margin-bottom: 1.25em;
-  max-width: 420px;
+  max-width: 380px;
 }
 
 .footer {
@@ -290,23 +302,159 @@ img {
 
 .footer__content {
   display: none;
+  font-size: 1rem;
 }
 
 @media (min-width: 480px) {
-  .sidebar {
-    align-items: center;
+  .sidebar__block {
+    margin: 2em auto;
+  }
+}
+
+@media (min-width: 560px) {
+  .top-section__title {
+    font-size: 3.5rem;
   }
 }
 
 @media (min-width: 700px) {
-  .sidebar {
-    flex-direction: row;
-    align-items: normal;
-    gap: 1em;
+  .flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .flex-item {
+    flex: 1;
+  }
+
+  .flex-item + .flex-item {
+    margin-left: 4em;
+  }
+
+  .menuToggle {
+    display: none;
+  }
+
+  .nav {
+    opacity: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .nav > ul {
+    overflow: initial;
+  }
+
+  .nav__list {
+    display: flex;
+    margin: 0;
+  }
+
+  .nav__item {
+    margin: 0 0 0 2em;
+  }
+
+  .nav__link--button {
+    background: var(--header-button);
+    padding: 0.25em 1em;
+    border-radius: 100px;
+    transition: all 0.2s ease-out;
+  }
+
+  .nav__link--button:hover {
+    background: #fff;
+    color: var(--block-section);
+    opacity: 1;
+  }
+
+  .top-section {
+    padding: 7em 0;
+  }
+
+  .top-section__title {
+    font-size: 4rem;
+    width: 60%;
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  .top-section__block {
+    margin-top: 1.5em;
+    margin-left: 1.75em;
+    width: 40%;
+  }
+
+  .top-section__text {
+    margin-top: 0;
+  }
+
+  .sub-section {
+    text-align: center;
   }
 
   .main__img {
     width: 100%;
-    max-height: 350px;
+    max-height: 320px;
+    margin-bottom: 1em;
+  }
+
+  .main__content  p{
+    margin-bottom: 2em;
+  }
+
+  .sidebar {
+    margin-top: 0;
+    display: flex;
+  }
+
+  .sidebar__block {
+    margin: 0;
+  }
+
+  .sidebar__block + .sidebar__block {
+    margin-left: 1.5em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .flex-main {
+    display: flex;
+  }
+
+  .main__content {
+    width: 62%;
+  }
+
+  .sidebar {
+    width: 42%;
+    flex-direction: column;
+    margin-left: 3em;
+  }
+
+  .sidebar__block {
+    align-self: flex-end;
+    margin-bottom: 1.25em;
+  }
+
+  .sidebar__block + .sidebar__block {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .top-section__title {
+    font-size: 5.25rem;
+    width: 44%;
+  }
+
+  .top-section__block {
+    width: 42%;
+    margin: 9.5em 3em 0 0;
+  }
+
+  .top-section__text {
+    width: 450px;
   }
 }
